@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'BreadBasket_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME' : 'postgres',
-        'USER' : 'postgres',
-        'PASSWORD' : 'jeeho123',
-        'HOST' : 'localhost',
+        'NAME' : 'urdldymd',
+        'USER' : 'urdldymd',
+        'PASSWORD' : 'Vo3fowmBB8PqsJiEKHNos2pia_PPs5Ht',
+        'HOST' : 'ruby.db.elephantsql.com',
         'PORT' : '5432'
     }
 }
