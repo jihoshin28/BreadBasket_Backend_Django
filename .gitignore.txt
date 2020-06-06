@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 Lib/
 Scripts/
 Include/
+=======
+>>>>>>> a52822203339c96fd89f754c81234a2e32af5d53
 env
 *.DS_Store
 *.pyc
