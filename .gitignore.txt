@@ -1,4 +1,7 @@
-
+Lib/
+Scripts/
+Include/
+env
 *.DS_Store
 *.pyc
 __pycache__
