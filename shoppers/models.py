@@ -22,21 +22,28 @@ class Store(models.Model):
     
     def __str__(self):
         return self.name
-
-class Order(models.Model):
-    shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
-    store = models.ForeignKey(Store, on_delete = models.CASCADE)
-    item = models.ManytoManyField(Item)
-
+        
 class Item(models.Model):
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
-    shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
+    shoppers = models.ManyToManyField(Shopper)
     name = models.CharField(max_length = 50)
     price = models.IntegerField()
     # image = models.ImageField()
     
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    
+    shopper = models.ForeignKey(Shopper, related_name = "shopper", on_delete = models.CASCADE)
+    item = models.ForeignKey(Item, on_delete= models.CASCADE)
+    store = models.ForeignKey(Store, on_delete = models.CASCADE)
+    
+
+    def __id__(self):
+        return self.id
+
+
 
 
 
