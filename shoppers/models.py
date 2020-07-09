@@ -25,7 +25,6 @@ class Store(models.Model):
         
 class Item(models.Model):
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
-    shoppers = models.ManyToManyField(Shopper)
     name = models.CharField(max_length = 50)
     price = models.IntegerField()
     # image = models.ImageField()
@@ -36,7 +35,7 @@ class Item(models.Model):
 class Order(models.Model):
     
     shopper = models.ForeignKey(Shopper, related_name = "shopper", on_delete = models.CASCADE)
-    item = models.ForeignKey(Item, on_delete= models.CASCADE)
+    items = models.ManyToManyField(Item)
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
     
 
