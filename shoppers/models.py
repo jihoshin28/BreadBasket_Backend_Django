@@ -23,6 +23,11 @@ class Store(models.Model):
     def __str__(self):
         return self.name
 
+class Order(models.Model):
+    shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
+    store = models.ForeignKey(Store, on_delete = models.CASCADE)
+    item = models.ManytoManyField(Item)
+
 class Item(models.Model):
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
     shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
