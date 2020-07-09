@@ -26,7 +26,7 @@ class Store(models.Model):
 class Item(models.Model):
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
     name = models.CharField(max_length = 50)
-    price = models.IntegerField()
+    price = models.FloatField()
     # image = models.ImageField()
     
     def __str__(self):
