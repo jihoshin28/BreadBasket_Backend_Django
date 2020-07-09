@@ -13,16 +13,26 @@ class Shopper(models.Model):
     def __str__(self):
         return self.name
 
-class Item(models.Model):
-    shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
-    name = models.CharField(max_length = 50)
-    price = models.IntegerField()
-    # image = models.ImageField()
-    
-
 class Store(models.Model):
     name = models.CharField(max_length = 50)
     address = models.CharField(max_length = 300)
     city = models.CharField(max_length = 50)
     state = models.CharField(max_length = 25)
     phone = models.IntegerField()
+    
+    def __str__(self):
+        return self.name
+
+class Item(models.Model):
+    store = models.ForeignKey(Store, on_delete = models.CASCADE)
+    shopper = models.ForeignKey(Shopper, on_delete = models.CASCADE)
+    name = models.CharField(max_length = 50)
+    price = models.IntegerField()
+    # image = models.ImageField()
+    
+    def __str__(self):
+        return self.name
+
+
+
+
