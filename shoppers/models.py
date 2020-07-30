@@ -36,10 +36,6 @@ class Order(models.Model):
     shopper = models.ForeignKey(Shopper, related_name = "shopper", on_delete = models.CASCADE)
     items = models.ManyToManyField(Item)
     store = models.ForeignKey(Store, on_delete = models.CASCADE)
-    
-
-    def __id__(self):
-        return self.id
 
     def __str__(self):
         return self.name
