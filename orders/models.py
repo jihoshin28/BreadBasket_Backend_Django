@@ -1,6 +1,6 @@
 from django.db import models
-from drivers.models import *
-from shoppers.models import *
+from ..drivers.models import Driver
+from ..shoppers.models import Shopper, Item
 # Create your models here.
 class Order(models.Model):
     order_driver = models.ForeignKey(Driver, on_delete= models.PROTECT)

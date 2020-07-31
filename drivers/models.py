@@ -13,6 +13,9 @@ class Driver(models.Model):
     def __str__(self):
         return self.name
 
+class OrderHistory(models.Model):
+
+
 
 
 
